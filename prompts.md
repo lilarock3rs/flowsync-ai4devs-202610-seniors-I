@@ -22,14 +22,63 @@ Borra el ejemplo de abajo cuando escribas el primero.
 
 ## Prompt 1
 
-**Modelo:** Opus 1M xHigh
+**Modelo:** Claude Opus 5.5
 **Herramienta:** Claude Code
 
 ```
-Este es el ejemplo. Bórralo.
-
-El prompt va aquí dentro, entero y con sus saltos de línea,
-para que se sepa dónde empieza y dónde acaba.
+analiza el módulo de cuentas y acceso, backend y frontend
 ```
 
-**Qué salió:** (opcional, una línea) funcionó a la primera / tuve que insistir / me inventó una ruta que no existe.
+**Qué salió:** leyó backend y frontend del módulo y probó la API con curl; devolvió un análisis en el chat, todavía sin spec.
+
+---
+
+## Prompt 2
+
+**Modelo:** Claude Opus 5.5
+**Herramienta:** Claude Code
+
+```
+HAZLO
+```
+
+**Qué salió:** escribió docs/spec-viva/LA.md con la spec (formato obligatorio) y un borrador de las tres listas de la parte B, a partir del análisis del prompt 1.
+
+---
+
+## Prompt 3
+
+**Modelo:** Claude Opus 5.5
+**Herramienta:** Claude Code
+
+```
+PERO ESTO CUMPLIRIA LO DE ESTE MODULO?
+```
+
+**Qué salió:** revisó el archivo contra la checklist del enunciado y listó lo que falta para cumplirlo.
+
+---
+
+## Prompt 4
+
+**Modelo:** Claude Opus 5.5
+**Herramienta:** Claude Code
+
+```
+1. VALIDA TU. 2 HAZLO
+```
+
+**Qué salió:** el agente comprobó los requisitos contra el código y con peticiones reales a la API, corrigió la spec y reescribió las listas de la parte B. La verificación la hizo el agente, no yo; así consta en la lista 1.
+
+---
+
+## Prompt 5
+
+**Modelo:** Claude Opus 5.5
+**Herramienta:** Claude Code
+
+```
+SUBELO
+```
+
+**Qué salió:** commit y push de la rama spec-viva-LA a mi fork.
